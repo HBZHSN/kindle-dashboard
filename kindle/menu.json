@@ -1,0 +1,6 @@
+{
+  "items": [
+    {"name": "Start native dashboard", "action": "/mnt/us/kindle-dashboard/control.sh start"},
+    {"name": "Stop native dashboard", "action": "/mnt/us/kindle-dashboard/control.sh stop"}
+  ]
+}

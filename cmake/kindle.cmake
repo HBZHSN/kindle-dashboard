@@ -1,0 +1,16 @@
+# Pass the Kindle-compatible SDK prefix and dependency sysroot explicitly.
+# A generic modern Ubuntu ARM sysroot is not compatible with Kindle's older libc.
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+if(NOT DEFINED KINDLE_TOOLCHAIN_PREFIX OR NOT DEFINED KINDLE_SYSROOT)
+    message(FATAL_ERROR "Set KINDLE_TOOLCHAIN_PREFIX (full path ending in arm-kindlepw2-linux-gnueabi-) and KINDLE_SYSROOT")
+endif()
+set(CMAKE_CXX_COMPILER "${KINDLE_TOOLCHAIN_PREFIX}g++")
+set(CMAKE_SYSROOT "${KINDLE_SYSROOT}")
+set(CMAKE_FIND_ROOT_PATH "${KINDLE_SYSROOT}")
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+set(CMAKE_CXX_FLAGS_INIT "-Os -ffunction-sections -fdata-sections")
+set(CMAKE_EXE_LINKER_FLAGS_INIT "-Wl,--gc-sections")

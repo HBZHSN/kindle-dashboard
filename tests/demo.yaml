@@ -1,0 +1,22 @@
+# Synthetic offline fixture. Always run with --offline --snapshot tests/sample.json.
+market:
+  source: mix
+  mix_symbols:
+    - DEMO-A
+    - DEMO-B
+    - sh000001[Shanghai Composite]
+    - sz399303[CSI 2000]
+    - sh000688[STAR 50]
+    - sz980017[CNI Chip]
+    - .NDX[Nasdaq 100]
+    - NQ[E-mini Nasdaq 100]
+    - BTC-USD[BTC]
+    - GC[COMEX Gold]
+weather:
+  location: Hangzhou
+sunset:
+  city: 杭州
+schedule:
+  timezone: Asia/Shanghai
+news:
+  platform: eastmoney

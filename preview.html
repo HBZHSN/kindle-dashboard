@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kindle Dashboard · WSL</title>
+<style>
+body{margin:0;background:#ddd;font:14px system-ui;text-align:center}header{padding:12px}img{display:block;max-width:100%;max-height:calc(100vh - 60px);margin:auto;box-shadow:0 2px 12px #999}button{margin-left:12px}
+</style>
+<header>WSL 原生 C++ 预览 <button id="rotate">查看 KPW3 屏幕方向</button></header>
+<img id="screen" alt="请先运行 run-wsl.ps1 -Demo；此处显示原生程序输出的画面。" src="preview/frame.png">
+<script>
+let physical=false;
+const previewImage=document.getElementById('screen');
+function refresh(){const next=new Image();next.onload=()=>previewImage.src=next.src;next.src='preview/'+(physical?'device':'frame')+'.png?t='+Date.now();}
+document.getElementById('rotate').onclick=event=>{physical=!physical;event.target.textContent=physical?'查看横向布局':'查看 KPW3 屏幕方向';refresh();};
+setInterval(refresh,1000);
+</script>
+</html>

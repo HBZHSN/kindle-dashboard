@@ -1,0 +1,48 @@
+market:
+  source: mix
+  mix_symbols:
+  - sh000001[Shanghai Composite]
+  - BTC-USD[BTC]
+  mix_sources:
+    sh000001:
+      provider: tencent
+      market: a_share
+      code: sh000001
+    BTC-USD:
+      provider: binance
+      code: BTCUSDT
+weather:
+  location: Hangzhou
+cloud:
+  latitude: 30.2741
+  longitude: 120.1551
+  proxy: ""  # Optional HTTP(S) proxy; keep private addresses in local config.yaml.
+sunset:
+  enabled: true
+  city: 杭州
+  timezone: Asia/Shanghai
+  refresh_seconds: 3600
+  cache_max_age_seconds: 1800
+agent_usage:
+  url: ""  # Set your usage endpoint only in local config.yaml.
+  password: ''
+  refresh_seconds: 60
+news:
+  platform: eastmoney
+schedule:
+  timezone: Asia/Shanghai
+output:
+  orientation: landscape
+cache:
+  data_path: .cache/dashboard-data.json
+refresh:
+  poll_seconds: 1
+  full_refresh_seconds: 900
+  market_seconds: 60
+  weather_seconds: 600
+  workers: 4
+  regions: {}
+display:
+  rotation: 90
+  waveform: GC16
+  fbink: fbink

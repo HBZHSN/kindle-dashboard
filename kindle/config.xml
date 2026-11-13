@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+  <information><name>Native Kindle Dashboard</name><id>kindle-dashboard-native</id><version>0.1.0</version></information>
+  <menus><menu type="json" dynamic="true">menu.json</menu></menus>
+</extension>
